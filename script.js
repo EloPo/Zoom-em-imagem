@@ -16,6 +16,8 @@ document.getElementById("drop-zone").addEventListener("drop", (e) => {
             container.innerHTML = "";
             imgElement = document.createElement("img");
             imgElement.src = event.target.result;
+            imgElement.style.width = "694px";
+            imgElement.style.height = "1000px";
             container.appendChild(imgElement);
             scale = 1;
             rotation = 0;
@@ -63,3 +65,10 @@ function rotateLeft() {
 function updateTransform() {
     imgElement.style.transform = `scale(${scale}) rotate(${rotation}deg)`;
 }
+
+// Atualiza a página ao sair e voltar para a aba
+window.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        location.reload();
+    }
+});
