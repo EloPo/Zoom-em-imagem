@@ -16,8 +16,7 @@ document.getElementById("drop-zone").addEventListener("drop", (e) => {
             container.innerHTML = "";
             imgElement = document.createElement("img");
             imgElement.src = event.target.result;
-            imgElement.style.width = "694px";
-            imgElement.style.height = "1000px";
+
             container.appendChild(imgElement);
             scale = 1;
             rotation = 0;
